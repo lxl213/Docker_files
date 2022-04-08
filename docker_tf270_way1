@@ -1,0 +1,22 @@
+FROM tensorflow/tensorflow:2.7.0-gpu
+RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+RUN apt-get update \
+    && apt-get install -y openssh-server \
+    && apt-get install -y graphviz \
+    && pip install graphviz -i https://pypi.mirrors.ustc.edu.cn/simple/ \
+    && pip install jupyterlab -i https://pypi.mirrors.ustc.edu.cn/simple/ \
+    && pip install Pillow -i https://pypi.mirrors.ustc.edu.cn/simple/ \
+    && pip install matplotlib -i https://pypi.mirrors.ustc.edu.cn/simple/ \
+    && pip install opencv-python -i https://pypi.mirrors.ustc.edu.cn/simple/ \
+    && pip install scikit-image==0.17.2 -i https://pypi.mirrors.ustc.edu.cn/simple/ \
+    && pip install pydicom -i https://pypi.mirrors.ustc.edu.cn/simple/ \
+    && pip install dicom2nifti -i https://pypi.mirrors.ustc.edu.cn/simple/ \
+    && pip install SimpleITK -i https://pypi.mirrors.ustc.edu.cn/simple/ \
+    && pip install pydot -i https://pypi.mirrors.ustc.edu.cn/simple/ \
+    && pip install nibabel -i https://pypi.mirrors.ustc.edu.cn/simple/ \
+    && pip install validators -i https://pypi.mirrors.ustc.edu.cn/simple/ \
+    && pip install tensorflow_addons -i https://pypi.mirrors.ustc.edu.cn/simple/ \
+    && pip install scipy -i https://pypi.mirrors.ustc.edu.cn/simple/ 
+
+    
+
